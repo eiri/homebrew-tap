@@ -5,21 +5,21 @@
 class ClimberCount < Formula
   desc "Telegram bot to report a people count in your local bouldering gym"
   homepage "https://github.com/eiri/climber-count"
-  version "0.1.6"
+  version "0.1.7"
   license "MIT"
 
   on_macos do
-    on_intel do
-      url "https://github.com/eiri/climber-count/releases/download/v0.1.6/climber-count_Darwin_x86_64.tar.gz"
-      sha256 "2c1fecdade0d887adfc987f5379d323b987635a5a6529d4d56dc12901003e692"
+    if Hardware::CPU.intel?
+      url "https://github.com/eiri/climber-count/releases/download/v0.1.7/climber-count_Darwin_x86_64.tar.gz"
+      sha256 "64d07629e3f66c4b26f00dfa14ff867005d988c238b8d98ac8e9462a0f850c36"
 
       def install
         bin.install "climber-count"
       end
     end
-    on_arm do
-      url "https://github.com/eiri/climber-count/releases/download/v0.1.6/climber-count_Darwin_arm64.tar.gz"
-      sha256 "b8d450c0417a6fce713c8e721f6cb7cbb1cb2dd3f656267a76262b0e7658f366"
+    if Hardware::CPU.arm?
+      url "https://github.com/eiri/climber-count/releases/download/v0.1.7/climber-count_Darwin_arm64.tar.gz"
+      sha256 "df76b28e503c49e12eabbe58b976522db99e4da49f91c27595c95204579056aa"
 
       def install
         bin.install "climber-count"
@@ -28,20 +28,20 @@ class ClimberCount < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/eiri/climber-count/releases/download/v0.1.6/climber-count_Linux_x86_64.tar.gz"
-        sha256 "d19d06d76ecef34de546db7364e95a64b2932b28f284bea8a118591c9e4eee84"
+        url "https://github.com/eiri/climber-count/releases/download/v0.1.7/climber-count_Linux_x86_64.tar.gz"
+        sha256 "c23098ed41963960eb7d0161003b38888147f3c545f24511ac10d7c2edbdd965"
 
         def install
           bin.install "climber-count"
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/eiri/climber-count/releases/download/v0.1.6/climber-count_Linux_arm64.tar.gz"
-        sha256 "179ce106929d1f141bf25328953b07847293b178e1cb24babda495ef1bc8627c"
+        url "https://github.com/eiri/climber-count/releases/download/v0.1.7/climber-count_Linux_arm64.tar.gz"
+        sha256 "d60c9f9d0ae5579a2d2c29c342297745c2e1e68974d85615baf972f9d53b80a3"
 
         def install
           bin.install "climber-count"
