@@ -1,4 +1,4 @@
-name: Brew Test-Bot
+name: Test Formula
 
 on:
   pull_request:
@@ -11,27 +11,30 @@ on:
       - "Formula/**.rb"
 
 jobs:
-  test-bot:
+  test-formula:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
 
     steps:
+      - name: Set up Homebrew (Linux only)
+        if: runner.os == 'Linux'
+        uses: Homebrew/actions/setup-homebrew@master
+
       - name: Checkout PR branch or pushed commit
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
-      - name: Set up Homebrew on Linux
-        if: matrix.os == 'ubuntu-latest'
-        uses: Homebrew/actions/setup-homebrew@master
+      - name: Update Homebrew
+        run: brew update-reset
 
-      - name: Set up Homebrew on MacOS
-        if: matrix.os == 'macos-latest'
-        run: |
-          brew update-reset
+      - name: Run brew style
+        run: brew style ./Formula
 
-      - name: Run brew test-bot
-        run: |
-          brew test-bot --tap=eiri/tap
+      - name: Run brew audit
+        run: brew audit --strict --online ./Formula
+
+      - name: Build and install formula
+        run: brew install --build-from-source ./Formula/*.rb
