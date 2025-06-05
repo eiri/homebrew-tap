@@ -11,23 +11,27 @@ on:
       - "Formula/**.rb"
 
 jobs:
-  test:
-    name: Run brew test-bot on ${{ matrix.os }}
+  test-bot:
     runs-on: ${{ matrix.os }}
-
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout PR branch or pushed commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
       - name: Set up Homebrew on Linux
         if: matrix.os == 'ubuntu-latest'
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Run test-bot
+      - name: Set up Homebrew on MacOS
+        if: matrix.os == 'macos-latest'
         run: |
-          brew tap ${{ github.repository }}
-          brew test-bot --tap=${{ github.repository }}
+          brew update-reset
+
+      - name: Run brew test-bot
+        run: |
+          brew test-bot --tap=eiri/tap --only-cleanup-before --only-setup --only-formulae --ci-auto
