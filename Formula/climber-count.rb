@@ -28,14 +28,14 @@ class ClimberCount < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/eiri/climber-count/releases/download/v0.1.8/climber-count_Linux_x86_64.tar.gz"
       sha256 "779c1bf6ccadd5489cc666d132b185c64d406a905f26be8cd5634611877a784c"
       def install
         bin.install "climber-count"
       end
     end
-    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/eiri/climber-count/releases/download/v0.1.8/climber-count_Linux_arm64.tar.gz"
       sha256 "d7125cdc721e8e3caf5969f092bd7d3a0ca1bfbea08212383d38f09eceeac707"
       def install
