@@ -34,4 +34,4 @@ jobs:
 
       - name: Run brew test-bot
         run: |
-          brew test-bot --tap=eiri/tap --only-cleanup-before --only-setup --only-formulae
+          brew test-bot --tap=eiri/tap
