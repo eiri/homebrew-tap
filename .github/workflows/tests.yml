@@ -27,9 +27,6 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
-      - name: Update Homebrew
-        run: brew update-reset
-
       - name: Run brew style
         run: brew style ./Formula
 
