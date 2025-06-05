@@ -5,21 +5,21 @@
 class Taon < Formula
   desc "Transform JSON into ASCII table"
   homepage "https://github.com/eiri/taon"
-  version "0.3.2"
+  version "0.3.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/eiri/taon/releases/download/v0.3.2/taon_0.3.2_Darwin_x86_64.tar.gz"
-      sha256 "8825afa0b8c3e1c4173ce9b25a5b1b17f150d13a21cfa4ffb451734760a0900c"
+      url "https://github.com/eiri/taon/releases/download/v0.3.3/taon_0.3.3_Darwin_x86_64.tar.gz"
+      sha256 "a7e785df6ed4363f4ce0f4bfa10c2fb7206787012770659fd916e08b23c56846"
 
       def install
         bin.install "taon"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/eiri/taon/releases/download/v0.3.2/taon_0.3.2_Darwin_arm64.tar.gz"
-      sha256 "e6068fa9045cd0c779b88dce1a1bb2fc3445b494036946fa4e31dd37f32b568c"
+      url "https://github.com/eiri/taon/releases/download/v0.3.3/taon_0.3.3_Darwin_arm64.tar.gz"
+      sha256 "48e118f933ec20c95e2db3cc659bf886a967a162b4b79c9c0d84b51e79f2541e"
 
       def install
         bin.install "taon"
@@ -29,16 +29,16 @@ class Taon < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/eiri/taon/releases/download/v0.3.2/taon_0.3.2_Linux_x86_64.tar.gz"
-      sha256 "afc09c45cb038e24640d3c5bce125bb90bd2c3128cb4ae2ea229f77cf5843310"
+      url "https://github.com/eiri/taon/releases/download/v0.3.3/taon_0.3.3_Linux_x86_64.tar.gz"
+      sha256 "88793dde752de0b226b224604eefd1051c4b6655b012b8075010ba33ad0bfe9f"
 
       def install
         bin.install "taon"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/eiri/taon/releases/download/v0.3.2/taon_0.3.2_Linux_arm64.tar.gz"
-      sha256 "8491918aafd475449e28fcbcd6829b7598bece6cbddfe9b44ccd96ed24fefc02"
+      url "https://github.com/eiri/taon/releases/download/v0.3.3/taon_0.3.3_Linux_arm64.tar.gz"
+      sha256 "5dc18dade30431a414d9091e119e4a717901d016e3e3a4e76d46eb9a4e076fb7"
 
       def install
         bin.install "taon"
