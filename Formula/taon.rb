@@ -5,21 +5,21 @@
 class Taon < Formula
   desc "Transform JSON into ASCII table"
   homepage "https://github.com/eiri/taon"
-  version "0.3.3"
+  version "0.3.6"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/eiri/taon/releases/download/v0.3.3/taon_0.3.3_Darwin_x86_64.tar.gz"
-      sha256 "a7e785df6ed4363f4ce0f4bfa10c2fb7206787012770659fd916e08b23c56846"
+      url "https://github.com/eiri/taon/releases/download/v0.3.6/taon_Darwin_x86_64.tar.gz"
+      sha256 "2e0fda90808fb1f5af847add02473b5fded3c84d9484290c9e3abdd050325995"
 
       def install
         bin.install "taon"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/eiri/taon/releases/download/v0.3.3/taon_0.3.3_Darwin_arm64.tar.gz"
-      sha256 "48e118f933ec20c95e2db3cc659bf886a967a162b4b79c9c0d84b51e79f2541e"
+      url "https://github.com/eiri/taon/releases/download/v0.3.6/taon_Darwin_arm64.tar.gz"
+      sha256 "cc6a2ff7e5628a59e336f5952c5846465e1ab632c04e5430d5dee9f49303baee"
 
       def install
         bin.install "taon"
@@ -28,18 +28,16 @@ class Taon < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/eiri/taon/releases/download/v0.3.3/taon_0.3.3_Linux_x86_64.tar.gz"
-      sha256 "88793dde752de0b226b224604eefd1051c4b6655b012b8075010ba33ad0bfe9f"
-
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/eiri/taon/releases/download/v0.3.6/taon_Linux_x86_64.tar.gz"
+      sha256 "cd80feb62652645e04971b8231fd0910c68c7f22aad2505bd38d43be99a2834e"
       def install
         bin.install "taon"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/eiri/taon/releases/download/v0.3.3/taon_0.3.3_Linux_arm64.tar.gz"
-      sha256 "5dc18dade30431a414d9091e119e4a717901d016e3e3a4e76d46eb9a4e076fb7"
-
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/eiri/taon/releases/download/v0.3.6/taon_Linux_arm64.tar.gz"
+      sha256 "a087bcd841daae5bef18dbc3c7313cb2da3410f0d37270e1a4ea8efea1cefe64"
       def install
         bin.install "taon"
       end
