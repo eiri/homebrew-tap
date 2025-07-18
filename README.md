@@ -6,7 +6,7 @@ Homebrew Formulae for utils by @eiri
 
 `brew install eiri/tap/<formula>`
 
-Or `brew tap eiri/tap` and then `brew install <formula>`.
+Or `brew tap eiri/tap` and then `brew install <formula> --cask`.
 
 ## Documentation
 
