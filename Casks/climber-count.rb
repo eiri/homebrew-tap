@@ -2,9 +2,10 @@
 cask "climber-count" do
   name "Climber Count"
 
+  name "climber-count"
   desc "Telegram bot to report a people count in your local bouldering gym"
   homepage "https://github.com/eiri/climber-count"
-  version "0.1.10"
+  version "0.1.11"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,23 +15,23 @@ cask "climber-count" do
 
   on_macos do
     on_intel do
-      url "https://github.com/eiri/climber-count/releases/download/v0.1.10/climber-count_Darwin_x86_64.tar.gz"
-      sha256 "cce946da02609244e517dbce3118a7236be691435be09781841a025144137f65"
+      url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Darwin_x86_64.tar.gz"
+      sha256 "8eb2a5d58ce8a12fe21aabf0bb024a51c15f53e598efcfaf47f49be52583fd4f"
     end
     on_arm do
-      url "https://github.com/eiri/climber-count/releases/download/v0.1.10/climber-count_Darwin_arm64.tar.gz"
-      sha256 "3dab6dfdd8c11d4a8b12436fd6f7521248db6de6cead9f19e27b360a3d5ff3b9"
+      url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Darwin_arm64.tar.gz"
+      sha256 "e2f8647608fae037dde1c3a4aa46cd228b5b3e3f2b629e1f01d5cec04ec3af16"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/eiri/climber-count/releases/download/v0.1.10/climber-count_Linux_x86_64.tar.gz"
-      sha256 "709a798c3ca54e087dfd5525de471862b6d0baa6a71154a15155e9d1e3fb0203"
+      url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Linux_x86_64.tar.gz"
+      sha256 "0c113f611d0fee625fdd3022c1907b920ebff82edbbd7e9d636207b0c06666e2"
     end
     on_arm do
-      url "https://github.com/eiri/climber-count/releases/download/v0.1.10/climber-count_Linux_arm64.tar.gz"
-      sha256 "483cc97641b5bf54e9b10372559effb881adeb686349f591326d50eb2a2f8d6a"
+      url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Linux_arm64.tar.gz"
+      sha256 "77293ed0fff1b8f52d073f57dea897e8c78b58b0e0539ab05e2bf42c51be9db2"
     end
   end
 
