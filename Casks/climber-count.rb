@@ -2,38 +2,39 @@
 cask "climber-count" do
   name "Climber Count"
 
+  version "0.1.12"
+
+  on_macos do
+    on_intel do
+      sha256 "810b72d3f6cdd46aee00bf0f0b93acf19e883cbf5a26cf09877e6c447f55d5b2"
+      url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Darwin_x86_64.tar.gz"
+    end
+    on_arm do
+      sha256 "c9fc04abdcec60ae682a72224b865352c7de69788b94c500bdfd78257ccfc2b9"
+      url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Darwin_arm64.tar.gz"
+    end
+  end
+
+  on_linux do
+    on_intel do
+      sha256 "e6fc636c377e40400817138f2f85c1c7fd09aaf09548ba74d1c615d8a82c9cb9"
+      url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Linux_x86_64.tar.gz"
+    end
+    on_arm do
+      sha256 "d03b5ece5c04d45cad3c28b53a5b9fec92167115dc7aa6c634054bddc1a8260b"
+      url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Linux_arm64.tar.gz"
+    end
+  end
+
   name "climber-count"
   desc "Telegram bot to report a people count in your local bouldering gym"
   homepage "https://github.com/eiri/climber-count"
-  version "0.1.11"
 
   livecheck do
     skip "Auto-generated on release."
   end
 
   binary "climber-count"
-
-  on_macos do
-    on_intel do
-      url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Darwin_x86_64.tar.gz"
-      sha256 "8eb2a5d58ce8a12fe21aabf0bb024a51c15f53e598efcfaf47f49be52583fd4f"
-    end
-    on_arm do
-      url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Darwin_arm64.tar.gz"
-      sha256 "e2f8647608fae037dde1c3a4aa46cd228b5b3e3f2b629e1f01d5cec04ec3af16"
-    end
-  end
-
-  on_linux do
-    on_intel do
-      url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Linux_x86_64.tar.gz"
-      sha256 "0c113f611d0fee625fdd3022c1907b920ebff82edbbd7e9d636207b0c06666e2"
-    end
-    on_arm do
-      url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Linux_arm64.tar.gz"
-      sha256 "77293ed0fff1b8f52d073f57dea897e8c78b58b0e0539ab05e2bf42c51be9db2"
-    end
-  end
 
   postflight do
     if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
@@ -42,4 +43,5 @@ cask "climber-count" do
   end
 
   # No zap stanza required
+
 end
