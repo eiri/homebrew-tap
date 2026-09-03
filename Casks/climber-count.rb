@@ -2,25 +2,25 @@
 cask "climber-count" do
   name "Climber Count"
 
-  version "0.1.14"
+  version "0.1.15"
 
   on_macos do
     on_arm do
-      sha256 "ad7bee563d078c212d8af1ff8ca3c49443ae7a04de01c318338711560db8789f"
+      sha256 "9d30099c7a1b265787dc698760feb9bf2fd60f1d3212cdac61878e62c1b7e722"
       url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "4200cd0e88715b85f756e9043696a73eb3c12e7048a42db09168e0763545c0a9"
+      sha256 "84d26ef65ed22a54c61fd686830dbdced23a6a0db5db48d708e8d4698dfedea9"
       url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Darwin_x86_64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "ef33a31b2e147abea414c12eb35406668eff02c1746c0e63eac584b20914ce0f"
+      sha256 "6a131e3b01719276805d4aee5dbd6fd0d6c0987c191d2c32c2c7f97f5bd36c2b"
       url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "efecfdd3db704fd0e531173a8d11ee3173d4f87a3a49d321798a78b2df6467e2"
+      sha256 "65426ca3dbf94222b8fc2752b9641d1fd664b96392371e0850505f3b8f36b302"
       url "https://github.com/eiri/climber-count/releases/download/v#{version}/climber-count_Linux_x86_64.tar.gz"
     end
   end
