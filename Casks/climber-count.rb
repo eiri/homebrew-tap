@@ -38,7 +38,7 @@ cask "climber-count" do
   postflight_steps do
     on_macos do
       run "/usr/bin/xattr",
-          args: ["-dr", "com.apple.quarantine", "{{staged_path}}/taon"],
+          args: ["-dr", "com.apple.quarantine", "{{staged_path}}/climber-count"],
           must_succeed: false
     end
   end
