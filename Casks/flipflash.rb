@@ -35,9 +35,11 @@ cask "flipflash" do
 
   binary "flipflash"
 
-  postflight do
-    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/flipflash"]
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr",
+          args: ["-dr", "com.apple.quarantine", "{{staged_path}}/flipflash"],
+          must_succeed: false
     end
   end
 
